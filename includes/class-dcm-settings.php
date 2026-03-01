@@ -14,8 +14,8 @@ final class DCM_Settings {
 
 	public function add_menu() {
 		add_options_page(
-			__( 'Dynamic Content', DCM_TEXTDOMAIN ),
-			__( 'Dynamic Content', DCM_TEXTDOMAIN ),
+			__( 'Dynamic Content', 'wp-content-manager-dilip-modhavadiya' ),
+			__( 'Dynamic Content', 'wp-content-manager-dilip-modhavadiya' ),
 			'manage_options',
 			'dcm-dynamic-content',
 			array( $this, 'render_page' )
@@ -27,17 +27,17 @@ final class DCM_Settings {
 
 		add_settings_section(
 			'dcm_main',
-			__( 'Promo Configuration', DCM_TEXTDOMAIN ),
+			__( 'Promo Configuration', 'wp-content-manager-dilip-modhavadiya' ),
 			function () {
-				echo '<p>' . esc_html__( 'Control how promo blocks display on the front-end.', DCM_TEXTDOMAIN ) . '</p>';
+				echo '<p>' . esc_html__( 'Control how promo blocks display on the front-end.', 'wp-content-manager-dilip-modhavadiya' ) . '</p>';
 			},
 			'dcm-dynamic-content'
 		);
 
-		$this->add_toggle_field( 'enabled', __( 'Enable/Disable', DCM_TEXTDOMAIN ) );
-		$this->add_number_field( 'max_promos', __( 'Maximum promo blocks', DCM_TEXTDOMAIN ), 1, 50 );
-		$this->add_number_field( 'cache_ttl', __( 'Cache TTL (minutes)', DCM_TEXTDOMAIN ), 1, 1440 );
-		$this->add_toggle_field( 'ajax_enabled', __( 'Enable AJAX loading', DCM_TEXTDOMAIN ) );
+		$this->add_toggle_field( 'enabled', __( 'Enable/Disable', 'wp-content-manager-dilip-modhavadiya' ) );
+		$this->add_number_field( 'max_promos', __( 'Maximum promo blocks', 'wp-content-manager-dilip-modhavadiya' ), 1, 50 );
+		$this->add_number_field( 'cache_ttl', __( 'Cache TTL (minutes)', 'wp-content-manager-dilip-modhavadiya' ), 1, 1440 );
+		$this->add_toggle_field( 'ajax_enabled', __( 'Enable AJAX loading', 'wp-content-manager-dilip-modhavadiya' ) );
 	}
 
 	private function add_toggle_field( $key, $label ) {
@@ -87,7 +87,7 @@ final class DCM_Settings {
 		}
 		?>
 		<div class="wrap">
-			<h1><?php echo esc_html__( 'Dynamic Content', DCM_TEXTDOMAIN ); ?></h1>
+			<h1><?php echo esc_html__( 'Dynamic Content', 'wp-content-manager-dilip-modhavadiya' ); ?></h1>
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( 'dcm_settings_group' );

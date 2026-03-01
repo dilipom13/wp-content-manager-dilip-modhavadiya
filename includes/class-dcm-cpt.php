@@ -29,8 +29,8 @@ final class DCM_CPT {
 			self::POST_TYPE,
 			array(
 				'labels'       => array(
-					'name'          => __( 'Promo Blocks', DCM_TEXTDOMAIN ),
-					'singular_name' => __( 'Promo Block', DCM_TEXTDOMAIN ),
+					'name'          => __( 'Promo Blocks', 'wp-content-manager-dilip-modhavadiya' ),
+					'singular_name' => __( 'Promo Block', 'wp-content-manager-dilip-modhavadiya' ),
 				),
 				'public'       => false,
 				'show_ui'      => true,
@@ -45,7 +45,7 @@ final class DCM_CPT {
 	public function add_meta_box() {
 		add_meta_box(
 			'dcm_promo_details',
-			__( 'Promo Details', DCM_TEXTDOMAIN ),
+			__( 'Promo Details', 'wp-content-manager-dilip-modhavadiya' ),
 			array( $this, 'render_meta_box' ),
 			self::POST_TYPE,
 			'normal',
@@ -62,24 +62,24 @@ final class DCM_CPT {
 		$expiry   = get_post_meta( $post->ID, self::META_EXPIRY, true );
 		?>
 		<p>
-			<label><strong><?php echo esc_html__( 'CTA Text', DCM_TEXTDOMAIN ); ?></strong></label><br>
+			<label><strong><?php echo esc_html__( 'CTA Text', 'wp-content-manager-dilip-modhavadiya' ); ?></strong></label><br>
 			<input class="widefat" type="text" name="dcm_cta_text" value="<?php echo esc_attr( $cta_text ); ?>">
 		</p>
 
 		<p>
-			<label><strong><?php echo esc_html__( 'CTA URL', DCM_TEXTDOMAIN ); ?></strong></label><br>
+			<label><strong><?php echo esc_html__( 'CTA URL', 'wp-content-manager-dilip-modhavadiya' ); ?></strong></label><br>
 			<input class="widefat" type="url" name="dcm_cta_url" value="<?php echo esc_attr( $cta_url ); ?>" placeholder="https://example.com">
 		</p>
 
 		<p>
-			<label><strong><?php echo esc_html__( 'Display Priority', DCM_TEXTDOMAIN ); ?></strong></label><br>
+			<label><strong><?php echo esc_html__( 'Display Priority', 'wp-content-manager-dilip-modhavadiya' ); ?></strong></label><br>
 			<input type="number" name="dcm_priority" value="<?php echo esc_attr( $priority ); ?>" min="0" step="1">
 		</p>
 
 		<p>
-			<label><strong><?php echo esc_html__( 'Expiry Date (YYYYMMDD)', DCM_TEXTDOMAIN ); ?></strong></label><br>
+			<label><strong><?php echo esc_html__( 'Expiry Date (YYYYMMDD)', 'wp-content-manager-dilip-modhavadiya' ); ?></strong></label><br>
 			<input type="text" name="dcm_expiry" class="dcm-datepicker" value="<?php echo esc_attr( $expiry ); ?>" placeholder="20261231" autocomplete="off">
-			<br><em><?php echo esc_html__( 'Empty = no expiry.', DCM_TEXTDOMAIN ); ?></em>
+			<br><em><?php echo esc_html__( 'Empty = no expiry.', 'wp-content-manager-dilip-modhavadiya' ); ?></em>
 		</p>
 		<?php
 	}

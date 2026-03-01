@@ -28,9 +28,7 @@ if ( ! defined( 'DCM_PLUGIN_DIR' ) ) {
 if ( ! defined( 'DCM_PLUGIN_URL' ) ) {
 	define( 'DCM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
-if ( ! defined( 'DCM_TEXTDOMAIN' ) ) {
-	define( 'DCM_TEXTDOMAIN', 'wp-content-manager-dilip-modhavadiya' );
-}
+
 
 /**
  * Includes
@@ -108,7 +106,7 @@ add_action(
 		 * Load Textdomain
 		 */
 		load_plugin_textdomain(
-			DCM_TEXTDOMAIN,
+			'wp-content-manager-dilip-modhavadiya',
 			false,
 			dirname( plugin_basename( DCM_PLUGIN_FILE ) ) . '/languages'
 		);

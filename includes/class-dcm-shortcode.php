@@ -25,7 +25,7 @@ final class DCM_Shortcode {
 		}
 
 		if ( $this->settings->ajax_enabled() ) {
-			return '<div class="dcm-promos" data-dcm-promos="1"><p>' . esc_html__( 'Loading promos...', DCM_TEXTDOMAIN ) . '</p></div>';
+			return '<div class="dcm-promos" data-dcm-promos="1"><p>' . esc_html__( 'Loading promos...', 'wp-content-manager-dilip-modhavadiya' ) . '</p></div>';
 		}
 
 		$promos = $this->repo->get_active_promos();
