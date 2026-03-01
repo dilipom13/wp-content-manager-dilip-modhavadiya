@@ -1,0 +1,4 @@
+.dcm-promos { display:block; }
+.dcm-promo { padding:12px 0; border-bottom:1px solid #eee; }
+.dcm-promo img { max-width:100%; height:auto; display:block; margin:0 0 10px; }
+.dcm-promo__btn { display:inline-block; padding:8px 12px; border:1px solid #000; text-decoration:none; }
