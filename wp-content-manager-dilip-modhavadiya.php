@@ -29,7 +29,7 @@ if ( ! defined( 'DCM_PLUGIN_URL' ) ) {
 	define( 'DCM_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
 if ( ! defined( 'DCM_TEXTDOMAIN' ) ) {
-	define( 'DCM_TEXTDOMAIN', 'wp-content-manager-firstname-lastname' );
+	define( 'DCM_TEXTDOMAIN', 'wp-content-manager-dilip-modhavadiya' );
 }
 
 /**
@@ -62,6 +62,7 @@ register_deactivation_hook( __FILE__, 'dcm_deactivate_plugin' );
  * Uninstall hook (works only if you DON'T use uninstall.php).
  */
 register_uninstall_hook( __FILE__, 'dcm_uninstall_plugin' );
+
 
 function dcm_activate_plugin() {
 	if ( class_exists( 'DCM_Install' ) ) {
@@ -98,9 +99,23 @@ function dcm_uninstall_plugin() {
 	}
 }
 
+
 add_action(
 	'plugins_loaded',
 	function() {
+
+		/**
+		 * Load Textdomain
+		 */
+		load_plugin_textdomain(
+			DCM_TEXTDOMAIN,
+			false,
+			dirname( plugin_basename( DCM_PLUGIN_FILE ) ) . '/languages'
+		);
+
+		/* 
+		 * Boot plugin
+		*/
 		if ( class_exists( 'DCM_Plugin' ) ) {
 			DCM_Plugin::instance();
 		}

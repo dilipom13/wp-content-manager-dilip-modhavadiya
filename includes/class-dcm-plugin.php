@@ -27,8 +27,7 @@ final class DCM_Plugin {
 	}
 
 	private function boot() {
-		add_action( 'init', array( $this, 'load_textdomain' ) );
-
+		
 		$this->settings = new DCM_Settings();
 		$this->repo     = new DCM_Repository( $this->settings );
 		$this->assets   = new DCM_Assets( $this->settings );
@@ -46,13 +45,5 @@ final class DCM_Plugin {
 		// Cache invalidation on changes (bonus)
 		add_action( 'save_post_' . DCM_CPT::POST_TYPE, array( $this->repo, 'flush_cache' ) );
 		add_action( 'deleted_post', array( $this->repo, 'flush_cache' ) );
-	}
-
-	public function load_textdomain() {
-		load_plugin_textdomain(
-			DCM_TEXTDOMAIN,
-			false,
-			dirname( plugin_basename( DCM_PLUGIN_FILE ) ) . '/languages'
-		);
 	}
 }

@@ -24,7 +24,7 @@ final class DCM_Rest {
 			array(
 				'methods'             => 'GET',
 				'callback'            => array( $this, 'get_promos' ),
-				'permission_callback' => '__return_true',
+				'permission_callback' => '__return_true', // Public endpoint: promo blocks are intended for frontend display and contain no sensitive data.
 			)
 		);
 	}
